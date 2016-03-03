@@ -85,7 +85,7 @@ function respond() {
   } 
   else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("no");
+    postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexCC.test(request.text)) {
