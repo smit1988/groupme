@@ -40,7 +40,7 @@ class GroupMeBot {
 
 $cmd = 'wget randomfunfacts.com -O - 2>/dev/null | grep \<strong\> | sed "s;^.*<i>\(.*\)</i>.*$;\1;"';
 // ENTER BOT ID INTO CONSTRUCTOR BELOW
-$bot = new GroupMeBot('12345678901234567890123456');
+$bot = new GroupMeBot('20eeae34cc721434492ea20f13');
 
 $msg_json = file_get_contents('php://input');
 $msg = json_decode($msg_json);
