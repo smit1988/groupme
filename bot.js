@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexPic = /^\/pic/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/;
@@ -96,6 +96,11 @@ function respond() {
   else if(request.text && botRegexBall.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.indra.com/8ball/"+Math.floor((20*Math.random())+1)+".gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexPic.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://unsplash.it/200/?random");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
