@@ -2,6 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
+include('tweet2json.php'); 
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
