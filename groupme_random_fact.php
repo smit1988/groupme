@@ -74,6 +74,6 @@ if (in_array('randomfact', $keywords) ||
 if (strlen($output) < 1)
 	exit();
 
-$bot->post($output);
-
+//$bot->post($output);
+$bot->post("something");
 ?>
