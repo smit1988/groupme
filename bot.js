@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegexName = /^\/name/;  botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexPic = /^\/pic/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegexName = /^\/Noah Smith/;  botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexPic = /^\/pic/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/;
@@ -112,9 +112,9 @@ function respond() {
     postMessage("https://media.giphy.com/media/1bgaiT0clnf0I/giphy.gif");
     this.res.end();
   }
-  else if(request.text && botRegexName.test(request.text)) {
+  else if(request.name && botRegexName.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(request.name);
+    postMessage("Ryan is uncool\nType /cool guy to mock Ryan");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
