@@ -114,7 +114,7 @@ function respond() {
   }
   else if(request.name && botRegexName.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Ryan is uncool\nType /cool guy to mock Ryan");
+    postMessage("Ryan is uncoolType /cool guy to mock Ryan");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
