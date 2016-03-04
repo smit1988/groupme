@@ -109,6 +109,15 @@ function respond() {
     out4 = letters.charAt(rand());
     out5 = letters.charAt(rand());
     postMessage("http://i.imgur.com/"+out1+out2+out3+out4+out5+".jpg");
+    function get_page_title($url){
+    	if( !($data = file_get_contents($url)) ) return false;
+	    if( preg_match("#(.+)<\/title>#iU", $data, $t))  {
+		    return trim($t[1]);
+	    } else {
+		    return false;
+	    }
+    }
+    postMessage(get_page_title("http://i.imgur.com/"+out1+out2+out3+out4+out5+".jpg"));
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
