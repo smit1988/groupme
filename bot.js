@@ -140,7 +140,6 @@ function respond() {
   else if(request.name == "Ryan Sharkey") {
     this.res.writeHead(200);
     var ryanAction = Math.random();
-    postMessage("Number:"+ryanAction);
     if((ryanAction <= 0.09) && (ryanAction > 0.06)){
       postMessage("Ryan is undoot\nType /meme to doot Ryan");
     }
