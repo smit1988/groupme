@@ -119,11 +119,11 @@ function respond() {
     this.res.writeHead(200);
     var ryanAction = Math.random();
     if(0.09 >= ryanAction > 0.06)
-    postMessage("Ryan is undoot\nType /meme to doot Ryan");
+      postMessage("Ryan is undoot\nType /meme to doot Ryan");
     else if (0.06 >= ryanAction > 0.03)
-    postMessage("Ryan Sharkey? More like Ryan ShLAMEkey\nType /burn to put Ryan in his place");
+      postMessage("Ryan Sharkey? More like Ryan ShLAMEkey\nType /burn to put Ryan in his place");
     else if (ryanAction <= 0.03)
-    postMessage("Woah, do you kiss your motherboard with that mouth?\nType /kiss to kiss Ryan's motherboard");
+      postMessage("Woah, do you kiss your motherboard with that mouth?\nType /kiss to kiss Ryan's motherboard");
     this.res.end();
   }
   else if(request.text && botRegexBurn.test(request.text)) {
