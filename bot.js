@@ -117,7 +117,7 @@ function respond() {
   }
   else if(request.name == "Ryan Sharkey") {
     this.res.writeHead(200);
-    postMessage("Ryan is uncool\nType /cool guy to mock Ryan");
+    postMessage("Ryan is undoot\nType /meme to doot Ryan");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
