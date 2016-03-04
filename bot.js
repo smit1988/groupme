@@ -15,22 +15,7 @@ function respond() {
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
   
-  if(request.name == "Ryan Sharkey") {
-    this.res.writeHead(200);
-    var ryanAction = Math.random();
-    postMessage(ryanAction);
-    if(0.09 >= ryanAction > 0.06){
-      postMessage("Ryan is undoot\nType /meme to doot Ryan");
-    }
-    else if (0.06 >= ryanAction > 0.03){
-      postMessage("Ryan Sharkey? More like Ryan ShLAMEkey\nType /burn to put Ryan in his place");
-    }
-    else if (ryanAction <= 0.03){
-      postMessage("Woah, do you kiss your motherboard with that mouth?\nType /kiss to kiss Ryan's motherboard");
-    }
-    else {}
-    this.res.end();
-  }
+  
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -158,7 +143,22 @@ function respond() {
     this.res.writeHead(200);
     this.res.end();
   }
-  
+  if(request.name == "Ryan Sharkey") {
+    this.res.writeHead(200);
+    var ryanAction = Math.random();
+    postMessage(ryanAction);
+    if(0.09 >= ryanAction > 0.06){
+      postMessage("Ryan is undoot\nType /meme to doot Ryan");
+    }
+    else if (0.06 >= ryanAction > 0.03){
+      postMessage("Ryan Sharkey? More like Ryan ShLAMEkey\nType /burn to put Ryan in his place");
+    }
+    else if (ryanAction <= 0.03){
+      postMessage("Woah, do you kiss your motherboard with that mouth?\nType /kiss to kiss Ryan's motherboard");
+    }
+    else {}
+    this.res.end();
+  }
   
 }
 
