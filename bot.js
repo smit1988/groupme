@@ -21,8 +21,8 @@ function respond() {
   } 
   else if(request.text && botRegexSpam.test(request.text)) {
     this.res.writeHead(200);
+    setTimeout(cool(),3000);
     postMessage("/spam");
-    setTimeout(respond(),3000);
     this.res.end();
   }  
   else if(request.text && botRegexDL.test(request.text)) {
