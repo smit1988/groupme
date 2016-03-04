@@ -99,7 +99,8 @@ function respond() {
   }
   else if(request.text && botRegexPic.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://unsplash.it/200/?random");
+    img();
+    postMessage(outimg.src);
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
@@ -172,6 +173,52 @@ function postMessage(response) {
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function img() {
+    function rand(x, y) {
+        return Math.floor(Math.random() * (x - y + 1) + y);
+    }
+    if(document.getElementsByTagName("img").length > 0){
+       document.body.removeChild(document.getElementsByTagName("img")[0]);
+    }
+    for (var i = 0, char, out = '', outimg; i < 5; i++) {
+        switch (rand(0, 4)) {
+        case 1:
+            char = rand(47, 58);
+            break;
+        case 2:
+            char = rand(64, 91);
+            break;
+        case 3:
+            char = rand(96, 123);
+            break;
+        }
+        out += String.fromCharCode(char);
+    }
+    outimg = document.createElement('img');
+    outimg.src = "http://i.imgur.com/" + out + ".jpg";
+    outimg.onload = imgCheck;
+    outimg.onerror = error;
+    outimg.onclick = img;
+    console.log("outimg", outimg.clientWidth);
+    document.body.appendChild(outimg);
+}
+function error(){
+    console.log("error");
+    imgCheck();    
+}
+function imgCheck() {
+    var i = document.getElementsByTagName('img')[0],
+        w = i.width,
+        h = i.height;
+    if (i == "undefined" || 
+        typeof w == "undefined" ||
+        w === 0 || 
+        (w==161 && h==81)
+       ) {
+        img();
+    }
 }
 
 
