@@ -99,7 +99,21 @@ function respond() {
   }
   else if(request.text && botRegexPic.test(request.text)) {
     this.res.writeHead(200);
-    img();
+        for (var i = 0, char, out = '', outimg; i < 5; i++) {
+        switch (rand(0, 4)) {
+        case 1:
+            char = rand(47, 58);
+            break;
+        case 2:
+            char = rand(64, 91);
+            break;
+        case 3:
+            char = rand(96, 123);
+            break;
+        }
+        out += String.fromCharCode(char);
+    }
+    postMessage("http://i.imgur.com/" + out + ".jpg");
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
