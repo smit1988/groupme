@@ -99,8 +99,7 @@ function respond() {
   }
   else if(request.text && botRegexPic.test(request.text)) {
     this.res.writeHead(200);
-    img();
-    postMessage(outimg.src);
+    postMessage(img());
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
