@@ -137,16 +137,10 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  
-  else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
-  }
-  if(request.name == "Ryan Sharkey") {
+  else if(request.name == "Ryan Sharkey") {
     this.res.writeHead(200);
     var ryanAction = Math.random();
-    postMessage(ryanAction);
+    postMessage("Number:"+ryanAction);
     if(0.09 >= ryanAction > 0.06){
       postMessage("Ryan is undoot\nType /meme to doot Ryan");
     }
@@ -159,6 +153,12 @@ function respond() {
     else {}
     this.res.end();
   }
+  else {
+    console.log("don't care");
+    this.res.writeHead(200);
+    this.res.end();
+  }
+  
   
 }
 
