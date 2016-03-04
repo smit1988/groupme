@@ -112,7 +112,7 @@ function respond() {
     postMessage("https://media.giphy.com/media/1bgaiT0clnf0I/giphy.gif");
     this.res.end();
   }
-  else if(request.name == "Noah Smith") {
+  else if(request.name == "Ryan Sharkey") {
     this.res.writeHead(200);
     postMessage("Ryan is uncool\nType /cool guy to mock Ryan");
     this.res.end();
