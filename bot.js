@@ -99,7 +99,7 @@ function respond() {
   }
   else if(request.text && botRegexPic.test(request.text)) {
     this.res.writeHead(200);
-    postMessage(img());
+    img();
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
@@ -202,6 +202,7 @@ function img() {
     outimg.onclick = img;
     console.log("outimg", outimg.clientWidth);
     document.body.appendChild(outimg);
+    postMessage(outimg.src);
 }
 function error(){
     console.log("error");
