@@ -1,3 +1,8 @@
+//ryan shlamekey
+//kiss no homo
+//kiss motherboard with that mouth
+//burn ascii donger /ooo /burn
+
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
