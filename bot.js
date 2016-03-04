@@ -102,7 +102,7 @@ function respond() {
     function rand(){
       return Math.floor(Math.random() * 10);
     }
-    postMessage("http://cdn.meme.am/instances/500x/6"+rand()+rand()+rand()+rand()+rand()+rand()+rand()+".jpg");
+    postMessage("http://cdn.meme.am/instances/500x/5"+rand()+rand()+rand()+rand()+rand()+rand()+rand()+".jpg");
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
