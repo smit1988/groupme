@@ -98,30 +98,17 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botRegexPic.test(request.text)) {
-    this.res.writeHead(200);postMessage("1");
-    function rand(x, y) {
-        return Math.floor(Math.random() * (x - y + 1) + y);
+    this.res.writeHead(200);
+    letters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; //62
+    function rand(){
+      return Math.floor(Math.random() * 62);
     }
-    postMessage("2");
-    if(document.getElementsByTagName("img").length > 0){
-       document.body.removeChild(document.getElementsByTagName("img")[0]);
-    }
-    postMessage("3");
-    for (var i = 0, char, out = '', outimg; i < 5; i++) {
-        switch (rand(0, 4)) {
-        case 1:
-            char = rand(47, 58);
-            break;
-        case 2:
-            char = rand(64, 91);
-            break;
-        case 3:
-            char = rand(96, 123);
-            break;
-        }
-        out += String.fromCharCode(char);
-    }
-    postMessage("http://i.imgur.com/" + out + ".jpg");
+    out1 = letters.substring(rand(),rand());
+    out2 = letters.substring(rand(),rand());
+    out3 = letters.substring(rand(),rand());
+    out4 = letters.substring(rand(),rand());
+    out5 = letters.substring(rand(),rand());
+    postMessage("http://i.imgur.com/"+out1+out2+out3+out4+out5+".jpg");
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
@@ -194,60 +181,6 @@ function postMessage(response) {
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
-}
-
-function img() {
-    postMessage("1");
-    function rand(x, y) {
-        return Math.floor(Math.random() * (x - y + 1) + y);
-    }
-    postMessage("2");
-    if(document.getElementsByTagName("img").length > 0){
-       document.body.removeChild(document.getElementsByTagName("img")[0]);
-    }
-    postMessage("3");
-    for (var i = 0, char, out = '', outimg; i < 5; i++) {
-        switch (rand(0, 4)) {
-        case 1:
-            char = rand(47, 58);
-            break;
-        case 2:
-            char = rand(64, 91);
-            break;
-        case 3:
-            char = rand(96, 123);
-            break;
-        }
-        out += String.fromCharCode(char);
-    }
-    postMessage("4");
-    outimg = document.createElement('img');
-    outimg.src = "http://i.imgur.com/" + out + ".jpg";
-    postMessage(outimg.src);
-    outimg.onload = imgCheck;
-    outimg.onerror = error;
-    outimg.onclick = img;
-    postMessage("5");
-    console.log("outimg", outimg.clientWidth);
-    document.body.appendChild(outimg);
-    postMessage(outimg.src);
-    postMessage("6");
-}
-function error(){
-    console.log("error");
-    imgCheck();    
-}
-function imgCheck() {
-    var i = document.getElementsByTagName('img')[0],
-        w = i.width,
-        h = i.height;
-    if (i == "undefined" || 
-        typeof w == "undefined" ||
-        w === 0 || 
-        (w==161 && h==81)
-       ) {
-        img();
-    }
 }
 
 
