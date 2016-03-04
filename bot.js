@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexPic = /^\/pic/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexMeme = /^\/meme/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/;
@@ -97,18 +97,12 @@ function respond() {
     postMessage("http://www.indra.com/8ball/"+Math.floor((20*Math.random())+1)+".gif");
     this.res.end();
   }
-  else if(request.text && botRegexPic.test(request.text)) {
+  else if(request.text && botRegexMeme.test(request.text)) {
     this.res.writeHead(200);
-    letters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; //62
     function rand(){
-      return Math.floor(Math.random() * 62);
+      return Math.floor(Math.random() * 10);
     }
-    out1 = letters.charAt(rand());
-    out2 = letters.charAt(rand());
-    out3 = letters.charAt(rand());
-    out4 = letters.charAt(rand());
-    out5 = letters.charAt(rand());
-    postMessage("http://i.imgur.com/"+out1+out2+out3+out4+out5+".jpg");
+    postMessage("http://cdn.meme.am/instances/500x/6"+rand()+rand()+rand()+rand()+rand()+rand()+rand()+".jpg");
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
