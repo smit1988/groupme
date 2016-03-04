@@ -103,11 +103,11 @@ function respond() {
     function rand(){
       return Math.floor(Math.random() * 62);
     }
-    out1 = letters.substring(rand(),rand());
-    out2 = letters.substring(rand(),rand());
-    out3 = letters.substring(rand(),rand());
-    out4 = letters.substring(rand(),rand());
-    out5 = letters.substring(rand(),rand());
+    out1 = letters.charAt(rand());
+    out2 = letters.charAt(rand());
+    out3 = letters.charAt(rand());
+    out4 = letters.charAt(rand());
+    out5 = letters.charAt(rand());
     postMessage("http://i.imgur.com/"+out1+out2+out3+out4+out5+".jpg");
     this.res.end();
   }
