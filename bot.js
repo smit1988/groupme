@@ -175,12 +175,15 @@ function getRandomInt(min, max) {
 }
 
 function img() {
+    postMessage("1");
     function rand(x, y) {
         return Math.floor(Math.random() * (x - y + 1) + y);
     }
+    postMessage("2");
     if(document.getElementsByTagName("img").length > 0){
        document.body.removeChild(document.getElementsByTagName("img")[0]);
     }
+    postMessage("3");
     for (var i = 0, char, out = '', outimg; i < 5; i++) {
         switch (rand(0, 4)) {
         case 1:
@@ -195,14 +198,18 @@ function img() {
         }
         out += String.fromCharCode(char);
     }
+    postMessage("4");
     outimg = document.createElement('img');
     outimg.src = "http://i.imgur.com/" + out + ".jpg";
+    postMessage(outimg.src);
     outimg.onload = imgCheck;
     outimg.onerror = error;
     outimg.onclick = img;
+    postMessage("5");
     console.log("outimg", outimg.clientWidth);
     document.body.appendChild(outimg);
     postMessage(outimg.src);
+    postMessage("6");
 }
 function error(){
     console.log("error");
