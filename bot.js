@@ -22,7 +22,7 @@ function respond() {
   else if(request.text && botRegexSpam.test(request.text)) {
     this.res.writeHead(200);
     postMessage("/spam");
-    setTimeout("",2000);
+    setTimeout(respond(),3000);
     this.res.end();
   }  
   else if(request.text && botRegexDL.test(request.text)) {
