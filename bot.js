@@ -1,8 +1,3 @@
-//ryan shlamekey
-//kiss no homo
-//kiss motherboard with that mouth
-//burn ascii donger /ooo /burn
-
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
@@ -10,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexMeme = /^\/meme/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegexKiss = /^\/kiss/;  botRegexBurn = /^\/burn/;  botRegex = /^\/cool guy/;  botRegexBall = /^\/8ball/;  botRegexSpook = /^\/spooky/;  botRegexDie = /^\/roll a die/;  botRegexMeme = /^\/meme/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/;
@@ -122,7 +117,23 @@ function respond() {
   }
   else if(request.name == "Ryan Sharkey") {
     this.res.writeHead(200);
+    var ryanAction = Math.random();
+    if(0.09 >= ryanAction > 0.06)
     postMessage("Ryan is undoot\nType /meme to doot Ryan");
+    else if (0.06 >= ryanAction > 0.03)
+    postMessage("Ryan Sharkey? More like Ryan ShLAMEkey\nType /burn to put Ryan in his place");
+    else if (ryanAction <= 0.03)
+    postMessage("Woah, do you kiss your motherboard with that mouth?\nType /kiss to kiss Ryan's motherboard");
+    this.res.end();
+  }
+  else if(request.text && botRegexBurn.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("༼⁰o⁰；༽ SICK BURN ༼⁰o⁰；༽");
+    this.res.end();
+  }
+  else if(request.text && botRegexKiss.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("lol no homo");
     this.res.end();
   }
   else if(request.text && botRegexSiege.test(request.text)) {
