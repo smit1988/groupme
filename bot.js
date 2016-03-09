@@ -109,7 +109,7 @@ function respond() {
     function rand(){
       return Math.floor(Math.random() * 10);
     }
-    postMessage("http://www.memecreator.org/static/images/memes/3837"+rand()+rand()+rand()+".jpg");
+    postMessage("http://www.memecreator.org/static/images/memes/383"+rand()+rand()+rand()+rand()+".jpg");
     this.res.end();
   }
   else if(request.text && botRegexDie.test(request.text)) {
