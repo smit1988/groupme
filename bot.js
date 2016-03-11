@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var r = require("nraw");
-var Reddit = new r("Testbot v0.0.1 by Mobilpadde");
+//var Reddit = new r("Testbot v0.0.1 by Mobilpadde");
 
 var botID = process.env.BOT_ID;
 
